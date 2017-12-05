@@ -1,5 +1,5 @@
 # from https://www.drupal.org/requirements/php#drupalversions
-FROM php:7.0-apache
+FROM php:7.1-apache
 
 ARG BRANCH
 
@@ -30,6 +30,7 @@ RUN set -ex \
 # https://www.drupal.org/node/3060/release
 ENV DIRPATH /var/www/html
 ENV DEFAULT_BRANCH master
+ENV PLUGIN_PACKAGE_NAME yoti-for-drupal-7.x-1.x-edge.zip
 ENV DRUPAL_VERSION 7.56
 ENV DRUPAL_MD5 5d198f40f0f1cbf9cdf1bf3de842e534
 
@@ -49,9 +50,9 @@ RUN git clone -b ${BRANCH} https://github.com/getyoti/yoti-drupal-7.git --single
         && echo "Finished cloning ${BRANCH}" \
         && cd yoti-drupal-7 \
         && ./pack-plugin.sh \
-        && mv ./yoti-for-drupal-7.x-1.x-edge.zip ${DIRPATH}/sites/all/modules \
+        && mv ./${PLUGIN_PACKAGE_NAME} ${DIRPATH}/sites/all/modules \
         && cd .. \
         && rm -rf yoti-drupal-7 \
         && cd ${DIRPATH}/sites/all/modules \
-        && unzip yoti-for-drupal-7.x-1.x-edge.zip \
-        && rm -f yoti-for-drupal-7.x-1.x-edge.zip
+        && unzip ${PLUGIN_PACKAGE_NAME} \
+        && rm -f ${PLUGIN_PACKAGE_NAME}

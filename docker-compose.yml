@@ -5,7 +5,7 @@ services:
     build:
       context: ./docker/
       args:
-        BRANCH: "SDK-104"
+        BRANCH: "master"
     ports:
      - "8007:80"
     volumes:
