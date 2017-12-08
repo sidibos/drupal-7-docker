@@ -3,9 +3,15 @@ Yoti Docker module for Drupal 7 including Yoti plugin.
 
 ## Setup
 
-Run the following command `docker-compose up -d` Add `--build` to rebuild the image
+Clone this repos and run the following commands: 
 
-Browse `http://localhost:8007`
+`cd drupal-7-docker`
+
+`docker-compose up -d` and add `--build` if you want to rebuild the image
+
+Browse the link below and follow the instructions
+
+`http://localhost:8007`
 
 ## Database Configuration
 Enter the following details for the database
