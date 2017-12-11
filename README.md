@@ -7,7 +7,9 @@ Clone this repos and run the following commands:
 
 `cd drupal-7-docker`
 
-`docker-compose up -d` and add `--build` if you want to rebuild the image
+`docker-compose build` to rebuild the image.
+
+`docker-compose up -d` to build the containers.
 
 Browse the link below and follow the instructions
 
