@@ -26,3 +26,10 @@ Host `yoti-drupal-7-db`
 
 ## Yoti plugin setup
 Please follow the instructions [here](https://github.com/getyoti/yoti-drupal-7) to set Yoti up.
+
+## Removing docker containers
+Run the following commands to remove docker containers:
+
+`docker-compose stop` and
+
+`docker-compose rm`
